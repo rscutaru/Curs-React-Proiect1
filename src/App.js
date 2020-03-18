@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://my-json-server.typicode.com/rscutaru/Curs-React-Proiect1/users')
       .then(response => response.json())
       .then(data => {
         data = data.filter(user => user.id < 4);

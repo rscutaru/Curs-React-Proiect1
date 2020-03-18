@@ -6,6 +6,8 @@ class UserAddForm extends React.Component {
         this.state = {
             name: '',
             email: '',
+            salary: '',
+            image: '',
             isGoldClient: false
         };
     }
@@ -18,17 +20,25 @@ class UserAddForm extends React.Component {
         this.setState({email: event.target.value});
     }
 
+    updateSalary(event) {
+        this.setState({name: event.target.value});
+    }
+
+    updateImage(event) {
+        this.setState({name: event.target.value});
+    }
+
     updateIsGoldClient(event) {
         this.setState({isGoldClient: event.target.checked});
     }
 
     render() {
-        const {name, email, isGoldClient} = this.state;
+        const {name, email, salary, image, isGoldClient} = this.state;
 
         return (
             <form
                 className="user-add-form"
-                onSubmit={(event) => this.props.submitAddForm(event, name, email, isGoldClient)}
+                onSubmit={(event) => this.props.submitAddForm(event, name, email, salary, image, isGoldClient)}
             >
                 <h2>Adauga utilizatori:</h2>
                 <label htmlFor="name">Nume:</label>
@@ -43,6 +53,21 @@ class UserAddForm extends React.Component {
                     name="email"
                     onChange={(event) => this.updateEmail(event)}
                 />
+
+                <label htmlFor="salary">Salary:</label>
+                <input
+                    type="text"
+                    name="salary"
+                    onChange={(event) => this.updateSalary(event)}
+                />
+
+                <label htmlFor="image">Image:</label>
+                <input
+                    type="text"
+                    name="eimage"
+                    onChange={(event) => this.updateImage(event)}
+                />
+
                 <label htmlFor="is-gold-client">Client GOLD</label>
                 <input
                     type="checkbox"

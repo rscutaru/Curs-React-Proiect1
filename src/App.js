@@ -8,7 +8,11 @@ class App extends React.Component {
     super();
     this.state = {
       background: 'white',
+      textColor: 'black',
       users: []
+      // 'https://i1.pngguru.com/preview/695/17/95/pes-2012-beckham-png-clipart.jpg'
+      // 'https://img.pngio.com/hd-david-beckham-render-soccer-player-transparent-png-image-david-beckham-png-2700_2716.png'
+
     };
   }
 
@@ -28,6 +32,11 @@ class App extends React.Component {
     this.setState({background: event.target.value});
   }
 
+  changeTextColor(event){
+    console.log(event.target.value);
+    this.setState({textColor: event.target.value});
+  }
+
   getMaxId(users) {
     let maxId = 0;
 
@@ -40,7 +49,7 @@ class App extends React.Component {
     return maxId;
   }
 
-  submitAddForm(event, name, email, isGoldClient) {
+  submitAddForm(event, name, email, salary, image, isGoldClient) {
     event.preventDefault();
     this.setState(prevState => {
       return {
@@ -50,6 +59,8 @@ class App extends React.Component {
             id: this.getMaxId(prevState.users) + 1,
             name,
             email,
+            salary,
+            image,
             isGoldClient
           }
         ]
@@ -59,11 +70,12 @@ class App extends React.Component {
 
   render() {
     return(
-      <div className="app" style={{background: this.state.background}}>
+      <div className="app" style={{background: this.state.background, color: this.state.textColor}}>
         <h1>Admin panel - Proiectul 1</h1>
-        <UserAddForm submitAddForm={(event, name, email, isGoldClient) => this.submitAddForm(event, name, email, isGoldClient)}/>
+        <UserAddForm submitAddForm={(event, name, email, salary, image, isGoldClient) => this.submitAddForm(event, name, email, salary, image, isGoldClient)}/>
         <UserList users={this.state.users}/>
         <input type="color" onChange={(event) => this.changeColor(event)}/>
+        <input type="color" onChange={(event) => this.changeTextColor(event)}/>
       </div>
     );
   }

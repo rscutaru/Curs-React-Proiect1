@@ -21,11 +21,11 @@ class UserAddForm extends React.Component {
     }
 
     updateSalary(event) {
-        this.setState({name: event.target.value});
+        this.setState({salary: event.target.value});
     }
 
     updateImage(event) {
-        this.setState({name: event.target.value});
+        this.setState({image: event.target.value});
     }
 
     updateIsGoldClient(event) {
@@ -64,7 +64,7 @@ class UserAddForm extends React.Component {
                 <label htmlFor="image">Image:</label>
                 <input
                     type="text"
-                    name="eimage"
+                    name="image"
                     onChange={(event) => this.updateImage(event)}
                 />
 

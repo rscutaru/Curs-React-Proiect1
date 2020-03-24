@@ -40,43 +40,45 @@ class UserAddForm extends React.Component {
                 className="user-add-form"
                 onSubmit={(event) => this.props.submitAddForm(event, name, email, salary, image, isGoldClient)}
             >
-                <h2>Adauga utilizatori:</h2>
+                <h2>Adauga utilizatori:</h2> 
                 <label htmlFor="name">Nume:</label>
-                <input
+                <input 
                     type="text"
                     name="name"
                     onChange={(event) => this.updateName(event)}
                 />
                 <label htmlFor="email">Email:</label>
-                <input
+                <input 
                     type="text"
                     name="email"
                     onChange={(event) => this.updateEmail(event)}
                 />
 
                 <label htmlFor="salary">Salary:</label>
-                <input
+                <input 
                     type="text"
                     name="salary"
                     onChange={(event) => this.updateSalary(event)}
                 />
 
                 <label htmlFor="image">Image:</label>
-                <input
+                <input 
                     type="text"
                     name="image"
                     onChange={(event) => this.updateImage(event)}
                 />
 
                 <label htmlFor="is-gold-client">Client GOLD</label>
-                <input
+                <input 
                     type="checkbox"
                     name="is-gold-client"
                     value="true"
                     onChange={(event) => this.updateIsGoldClient(event)}
                 />
 
-                <input type="submit" value="Introdu utilizatorul"/>
+                <input className="input-data"
+                    type="submit" 
+                    value="Introdu utilizatorul"/>
             </form>
         )
     }

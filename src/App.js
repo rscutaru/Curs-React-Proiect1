@@ -71,7 +71,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="app" style={{ background: this.state.background, color: this.state.textColor }}>
-                <h1>Admin panel - Proiectul 1</h1>
+                <h1>Admin panel - Proiectul 1</h1 >
                 <UserAddForm submitAddForm={(event, name, email, salary, image, isGoldClient) => this.submitAddForm(event, name, email, salary, image, isGoldClient)} />
                 <UserList users={this.state.users} />
                 <input type="color" onChange={(event) => this.changeColor(event)} />

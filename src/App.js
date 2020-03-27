@@ -1,6 +1,7 @@
 import React from 'react';
 import UserList from './components/UserList';
 import UserAddForm from './components/UserAddForm';
+import PostList from './components/PostList';
 import './App.css';
 
 class App extends React.Component {
@@ -9,7 +10,8 @@ class App extends React.Component {
         this.state = {
             background: 'white',
             textColor: 'black',
-            users: []
+            users: [],
+            posts:[]
             // 'https://i1.pngguru.com/preview/695/17/95/pes-2012-beckham-png-clipart.jpg'
             // 'https://img.pngio.com/hd-david-beckham-render-soccer-player-transparent-png-image-david-beckham-png-2700_2716.png'
 
@@ -20,12 +22,17 @@ class App extends React.Component {
         fetch('https://my-json-server.typicode.com/rscutaru/Curs-React-Proiect1/users')
             .then(response => response.json())
             .then(data => {
-                data = data.filter(user => user.id < 4);
+                data.filter(user => user.id < 4);
                 data.forEach(user => {
                     user.isGoldClient = false;
                 });
                 this.setState({ users: data });
-            })
+            });
+        fetch('https://my-json-server.typicode.com/rscutaru/Curs-React-Proiect1/posts')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ posts: data});
+            });
     }
 
     changeColor(event) {
@@ -74,6 +81,7 @@ class App extends React.Component {
                 <h1>Admin panel - Proiectul 1</h1 >
                 <UserAddForm submitAddForm={(event, name, email, salary, image, isGoldClient) => this.submitAddForm(event, name, email, salary, image, isGoldClient)} />
                 <UserList users={this.state.users} />
+                <PostList posts={this.state.posts}/>
                 <input type="color" onChange={(event) => this.changeColor(event)} />
                 <input type="color" onChange={(event) => this.changeTextColor(event)} />
             </div>

@@ -1,18 +1,20 @@
 import React from 'react';
 import PostItem from './PostItem';
 
-function PostList(props){
+function PostList(props) {
     const{posts}=props;
 
+        console.log(posts);
     return(
         <div>
             <p>Lista postarilor:</p>
-                {posts.map((post, index) => {
+                {posts.map((pos, index) => {
+                    console.log(pos.id);
                     return <PostItem
-                        userID={post.userId}
-                        title={post.title}
-                        body={post.body}
-                        id={post.id}
+                        userId={pos.userId}
+                        title={pos.title}
+                        body={pos.body}
+                        id={pos.id}
                         key={ index }
                     />
                 })}

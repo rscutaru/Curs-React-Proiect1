@@ -5,7 +5,7 @@ function PostItem(props) {
 
     return (
         <div>
-            <h3>{ userId }</h3>
+            <p>{ userId }</p>
             <p>{ id }</p>
             <p>{ title }</p>
             <p>{ body }</p>

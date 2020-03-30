@@ -11,11 +11,14 @@ class App extends React.Component {
             background: 'white',
             textColor: 'black',
             users: [],
-            posts:[]
+            posts:[],
             // 'https://i1.pngguru.com/preview/695/17/95/pes-2012-beckham-png-clipart.jpg'
             // 'https://img.pngio.com/hd-david-beckham-render-soccer-player-transparent-png-image-david-beckham-png-2700_2716.png'
-
+            showUsers: true,
+            showPosts: false
         };
+        this.clickedUsers=this.clickedUsers.bind(this);
+        this.clickedPosts=this.clickedPosts.bind(this);
     }
 
     componentDidMount() {
@@ -60,6 +63,20 @@ class App extends React.Component {
         this.setState({ textColor: event.target.value });
     }
 
+    clickedUsers(event) {
+        event.preventDefault()
+        this.setState({
+           showUsers : !this.state.showUsers
+        });
+    }
+
+    clickedPosts(event) {
+        event.preventDefault()
+        this.setState({
+           showPosts : !this.state.showPosts
+        });
+    }
+
     getMaxId(users) {
         let maxId = 0;
 
@@ -93,18 +110,22 @@ class App extends React.Component {
         });
     }
 
-    // displayUserList(event){
-    //     console.log(event.target.value);
-    //     this.setState({users})
-    // }
-
     render() {
+        const {showUsers, showPosts} = this.state;
+
         return (
             <div className="app" style={{ background: this.state.background, color: this.state.textColor }}>
                 <h1>Admin panel - Proiectul 1</h1 >
                 <UserAddForm submitAddForm={(event, name, email, salary, image, isGoldClient) => this.submitAddForm(event, name, email, salary, image, isGoldClient)} />
-                <UserList users={this.state.users} />
-                <PostList posts={this.state.posts}/>
+                {showUsers===true
+                    ? <UserList users={this.state.users} />
+                    :null
+                }
+                {showPosts===true
+                    ?<PostList posts={this.state.posts}/>
+                    :null}
+                <button className ="diplay-users" onClick= {this.clickedUsers}>Afiseaza useri:</button>
+                <button className ="display-posts" onClick ={ this.clickedPosts}>Afiseaza postari:</button>
                 <input type="color" onChange={(event) => this.changeColor(event)} />
                 <input type="color" onChange={(event) => this.changeTextColor(event)} />
 

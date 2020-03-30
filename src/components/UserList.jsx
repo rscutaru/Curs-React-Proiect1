@@ -5,7 +5,7 @@ function UserList(props) {
     const { users } = props;
 
     return (
-        <div>
+        <div >
             <h2>Lista utilizatorilor:</h2>
             { users.map((user, index) => {
                 return <UserItem

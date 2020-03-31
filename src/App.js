@@ -8,7 +8,7 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            background: 'white',
+            background: "edf2ef",
             textColor: 'black',
             users: [],
             posts:[],
@@ -110,6 +110,11 @@ class App extends React.Component {
         });
     }
 
+    deleteUser(event, user_id){
+        event.preventDefault();
+        console.log('delete user')
+    }
+
     render() {
         const {showUsers, showPosts} = this.state;
 
@@ -118,17 +123,17 @@ class App extends React.Component {
                 <h1>Admin panel - Proiectul 1</h1 >
                 <UserAddForm submitAddForm={(event, name, email, salary, image, isGoldClient) => this.submitAddForm(event, name, email, salary, image, isGoldClient)} />
                 {showUsers===true
-                    ? <UserList users={this.state.users} />
+                    ? <UserList users={this.state.users} deleteUserCallBack={(event,user_id) => this.deleteUser(event, user_id)} />
                     :null
                 }
                 {showPosts===true
                     ?<PostList posts={this.state.posts}/>
                     :null}
-                <button className ="diplay-users" onClick= {this.clickedUsers}>Afiseaza useri:</button>
-                <button className ="display-posts" onClick ={ this.clickedPosts}>Afiseaza postari:</button>
+                <button className ="showUsers" onClick= {this.clickedUsers}>Afiseaza useri:</button>
+                <button className ="showPosts" onClick ={ this.clickedPosts}>Afiseaza postari:</button>
                 <input type="color" onChange={(event) => this.changeColor(event)} />
                 <input type="color" onChange={(event) => this.changeTextColor(event)} />
-
+                
             </div>
         );
     }

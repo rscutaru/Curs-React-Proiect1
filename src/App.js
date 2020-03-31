@@ -112,7 +112,8 @@ class App extends React.Component {
 
     deleteUser(event, user_id){
         event.preventDefault();
-        console.log('delete user')
+       const filteredUsers = this.state.users.filter(user=> user.id !== user_id);
+       this.setState({users: filteredUsers});
     }
 
     render() {

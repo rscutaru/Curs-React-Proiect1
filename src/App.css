@@ -34,3 +34,19 @@
     color: purple;
     margin:20px auto;
 } 
+
+.deleteUser {
+    height: 50px;
+    width: 150px;
+    length: 1500px;
+    border-radius: 5px;
+    background-color: rgba(0, 238, 255, 0.5));
+    cursor: pointer;
+    font-weight: bolder;
+    color: rgb(0, 9, 128);
+    margin:20px auto;
+    position:relative;
+    right:10px;
+}
+
+

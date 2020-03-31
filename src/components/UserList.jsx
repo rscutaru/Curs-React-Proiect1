@@ -8,16 +8,23 @@ function UserList(props) {
         <div >
             <h2>Lista utilizatorilor:</h2>
             { users.map((user, index) => {
-                return <UserItem
-                    id={ user.id }
-                    name={ user.name }
-                    email={ user.email }
-                    isGoldClient={ user.isGoldClient }
-                    salary ={user.salary}
-                    image={ user.image}
-                    key={ index }
-                />
+                return (
+                <div>
+                    <UserItem
+                        id={ user.id }
+                        name={ user.name }
+                        email={ user.email }
+                        isGoldClient={ user.isGoldClient }
+                        salary ={user.salary}
+                        image={ user.image}
+                        key={ index }                    
+                        />
+                    <button className="deleteUser" onClick ={(event)=>props.deleteUserCallBack(event,user.id)}>Sterge utilizatorul:</button>
+                </div>
+                )
             })}
+            
+            
         </div>
     );
 }

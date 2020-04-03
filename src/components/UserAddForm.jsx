@@ -8,7 +8,8 @@ class UserAddForm extends React.Component {
             email: '',
             salary: '',
             image: '',
-            isGoldClient: false
+            isGoldClient: false,
+            errors:''
         };
     }
 
@@ -32,6 +33,68 @@ class UserAddForm extends React.Component {
         this.setState({isGoldClient: event.target.checked});
     }
 
+    validateName(event){
+        console.log(event.target.value);
+        const name= event.target.value;
+        let semaphore = false;
+        for( let i=0; i<name.length; i++){
+            if ( this.isLetter(name[i]) === false) {
+                semaphore = true;
+            }}
+        if (semaphore === true){
+             console.log('ERROR');
+        }
+    }
+
+    isLetter (char) {
+        if ((char>'Z' && char <'a') || 
+        char >'z' || 
+        char <'A'){
+            return false;
+        } else  {
+            return true;
+        }
+    } 
+
+    isEmailSpecific (char) {
+        if(char==='@'|| char ==='.'){
+            return true;
+        } else{
+            return false;
+        }
+    }
+    validateEmail(event){
+        const email= event.target.value;
+        console.log(email);
+        let semaphore = false;
+        for (let i=0; i<email.length; i++){
+            if (this.isLetter(email[i]) === false && this.isEmailSpecific(email[i]) === false) {
+                semaphore =true;
+            }}
+        if (semaphore === true){
+         console.log('ERROR');
+        }
+    }
+
+    // validateSalary (event){
+    //     const salary = event.target.value;
+    //     console.log(salary);
+    //     let semaphore = true;
+    //     for (let i= 0;i<salary.length; i++){
+    //         if (salary[i]<=0 &&
+    //             salary.indexOf['.'] ==-1 ) {
+
+    //             }
+    //     } else {semaphore = true}
+
+    //     if (semaphore == false){
+    //         console.log('ERROR');
+    //        }
+    // }
+
+
+
+
     render() {
         const {name, email, salary, image, isGoldClient} = this.state;
 
@@ -46,12 +109,14 @@ class UserAddForm extends React.Component {
                     type="text"
                     name="name"
                     onChange={(event) => this.updateName(event)}
+                    onBlur={(event)=>this.validateName(event)}
                 />
                 <label htmlFor="email">Email:</label>
                 <input 
                     type="text"
                     name="email"
                     onChange={(event) => this.updateEmail(event)}
+                    onBlur={(event)=>this.validateEmail(event)}
                 />
 
                 <label htmlFor="salary">Salary:</label>
@@ -59,6 +124,7 @@ class UserAddForm extends React.Component {
                     type="text"
                     name="salary"
                     onChange={(event) => this.updateSalary(event)}
+                    // onBlur={(event)=>this.validateSalary(event)}
                 />
 
                 <label htmlFor="image">Image:</label>

@@ -14,7 +14,6 @@
 .showUsers{
     height: 50px;
     width: 150px;
-    length: 100px;
     border-radius: 5px;
     background-color: rgb(255, 115, 0);
     cursor: pointer;
@@ -26,7 +25,6 @@
 .showPosts{
     height: 50px;
     width: 150px;
-    length: 100px;
     border-radius: 5px;
     background-color: rgba(21, 255, 0, 0.589);
     cursor: pointer;
@@ -38,9 +36,8 @@
 .deleteUser {
     height: 50px;
     width: 150px;
-    length: 1500px;
     border-radius: 5px;
-    background-color: rgba(0, 238, 255, 0.5));
+    background-color: rgba(0, 238, 255, 0.5);
     cursor: pointer;
     font-weight: bolder;
     color: rgb(0, 9, 128);

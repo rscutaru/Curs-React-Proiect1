@@ -39,3 +39,9 @@ Pentru a continua proiectul, aveți de implementat cerințele care au fost date 
 
 4.3. Stilizați aplicația, astfel încât să arate mai frumos.
 
+BONUS! BONUS! Încercați să introduceți rutarea în proiectul 1. Vreau sa aveți 3 rute:
+
+/ - afișează formularul de adăugare a userilor, lista userlior si butonul de schimbare al culorii de fundal(ce era si pana acum). Puteți pune toate componentele într-o pagină numită Home. Adăugați în subsol un Link către pagina de about.
+/about - pagină nouă, denumită About. Puneți în această pagină descrierea proiectului și eventual cateva detalii despre voi. Adăugați un link prin care vă puteți întoarce la Home.
+* - dacă utilizatorul introduce o rută inexistentă, creați și afișați o pagină de 404.
+

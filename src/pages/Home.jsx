@@ -124,7 +124,7 @@ class Home extends React.Component {
         const {showUsers, showPosts} = this.state;
 
         return (
-            <div className="app container" style={{ background: this.state.background, color: this.state.textColor }}>
+            <div className="app container-fluid" style={{ background: this.state.background, color: this.state.textColor }}>
                 <h1>Proiectul 1</h1 >
                 <UserAddForm submitAddForm={(event, name, email, salary, image, isGoldClient) => this.submitAddForm(event, name, email, salary, image, isGoldClient)} />
                 {showUsers===true
@@ -135,12 +135,12 @@ class Home extends React.Component {
                     ?<PostList posts={this.state.posts}/>
                     :null}
                     
-                <div>
+                <div className="container">
                     <div className='row'>
-                        <button className ="showUsers col-6" onClick= {this.clickedUsers}>Afiseaza useri:</button>
-                        <button className ="showPosts col-6" onClick ={ this.clickedPosts}>Afiseaza postari:</button>
-                        <input className="col-6" type="color" onChange={(event) => this.changeColor(event)} />
-                        <input className="col-6" type="color" onChange={(event) => this.changeTextColor(event)} />                  
+                        <button className ="showUsers col-3" onClick= {this.clickedUsers}>Afiseaza useri:</button>
+                        <button className ="showPosts col-3" onClick ={ this.clickedPosts}>Afiseaza postari:</button>
+                        <input className=" color col-3 " type="color" onChange={(event) => this.changeColor(event)} />
+                        <input className="color col-3" type="color" onChange={(event) => this.changeTextColor(event)} />                  
                     </div>
                     
                         <Link to='/about' > About </ Link >

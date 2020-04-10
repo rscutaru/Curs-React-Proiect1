@@ -3,6 +3,7 @@ import UserList from '../components/UserList';
 import UserAddForm from '../components/UserAddForm';
 import PostList from '../components/PostList';
 import './Home.css';
+import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 
 
@@ -141,9 +142,9 @@ class Home extends React.Component {
                         <input className="col-6" type="color" onChange={(event) => this.changeColor(event)} />
                         <input className="col-6" type="color" onChange={(event) => this.changeTextColor(event)} />                  
                     </div>
-                    <footer>
+                    
                         <Link to='/about' > About </ Link >
-                    </footer>
+                        <Footer/>
                 </div>
                 
                

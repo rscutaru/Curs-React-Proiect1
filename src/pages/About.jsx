@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import  './About.css';
+import Footer from '../components/Footer';
 
 class About extends React.Component {
     render() {
@@ -21,6 +22,7 @@ class About extends React.Component {
                     <li> Adding a <strong>button for changing the font colour</strong>; </li>                      
                 </ol>
                 <Link to ='/' >Home</Link>
+                <Footer/>
             </div>
         )
     }

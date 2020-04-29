@@ -38,4 +38,7 @@ Pentru a continua proiectul, aveți de implementat cerințele care au fost date 
 4.2. Faceți puțină validare a datelor. Spre exemplu, să nu poată fi introdus un nume gol, iar emailul să conțină caracterele `@` și `.`.
 
 4.3. Stilizați aplicația, astfel încât să arate mai frumos.
+4.4. **_Roxana_**
+ > test 
+
 
